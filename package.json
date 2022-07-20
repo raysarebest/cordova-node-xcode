@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.0.6",
+    "jsdoc": "^3.6.10",
     "nodeunit": "^0.11.3",
     "nyc": "^15.0.0",
     "pegjs": "^0.10.0",
@@ -25,10 +26,11 @@
     "test": "npm run cover",
     "test:unit": "nodeunit test/parser test",
     "cover": "nyc npm run test:unit",
-    "typescript": "npx tsc"
+    "typescript": "npx tsc",
+    "prepack": "npm run typescript"
   },
   "license": "Apache-2.0",
-  "types": "dist/index.d.ts",
+  "types": "types/index.d.ts",
   "nyc": {
     "all": true,
     "exclude": [
