@@ -3,7 +3,6 @@ import { XcodeProjectObject } from "./xcode";
 /**
  * A reference to a remote (not local) Swift Package Manager-based package for use in an Xcode project
  */
-
 export interface XCRemoteSwiftPackageReference extends XcodeProjectObject {
     /**
      * The name of the type this object represents
