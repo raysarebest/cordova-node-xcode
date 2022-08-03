@@ -2,9 +2,9 @@ import { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
 import { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
 
 /**
- * A description of how a remote (not local) package included by the Swift Package Manager should be compiled into a product for use in an Xcode project
+ * A Swift package product dependency that strictly names the product that the dependency produces
  */
-export interface XCSwiftPackageProductDependency extends XcodeProjectObject {
+export interface XCBaseSwiftPackageProductDependency extends XcodeProjectObject {
     /**
      * The name of the type this object represents
      */
@@ -18,7 +18,7 @@ export interface XCSwiftPackageProductDependency extends XcodeProjectObject {
 /**
  * A Swift package product dependency that has a direct reference to the package's source repository's Xcode metadata object
  */
-export interface XCReferencedSwiftPackageProductDependency extends XCSwiftPackageProductDependency {
+export interface XCReferencedSwiftPackageProductDependency extends XCBaseSwiftPackageProductDependency {
     /**
      * The identifier of the source repository of the Swift package in Xcode. Concrete data can be accessed through the project's `XCRemoteSwiftPackageReference` object archive
      */
@@ -28,3 +28,8 @@ export interface XCReferencedSwiftPackageProductDependency extends XCSwiftPackag
      */
     package_comment?: string;
 }
+
+/**
+ * A description of how a remote (not local) package included by the Swift Package Manager should be compiled into a product for use in an Xcode project
+ */
+export type XCSwiftPackageProductDependency = XCBaseSwiftPackageProductDependency | XCReferencedSwiftPackageProductDependency;

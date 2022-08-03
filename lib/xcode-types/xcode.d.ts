@@ -1,6 +1,6 @@
-import type { PBXProjectInternal, PBXSingleRootProject, PBXMultipleRootProject } from "./pbxproject";
+import type { PBXProjectInternal } from "./pbxproject";
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
-import type { XCSwiftPackageProductDependency, XCReferencedSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
+import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 
 /**
  * The root object of an Xcode project, containing metadata about the project, and a reference to the project's data
@@ -74,7 +74,7 @@ interface XcodeObjectArchiveList {
     /**
      * The list of objects included in the project file that describe how to emit distinct binary outputs
      */
-    PBXProject: XcodeObjectArchive<PBXSingleRootProject | PBXMultipleRootProject>;
+    PBXProject: XcodeObjectArchive<PBXProjectInternal>;
     /**
      * The list of objects included in the project file that describe a remote (not local) Swift Package that should be included in the project by the Swift Package Manager
      */
@@ -82,7 +82,7 @@ interface XcodeObjectArchiveList {
     /**
      * The list of objects included in the project file that describe modules produced by a remote (not local) Swift Package that should be compiled for use by other targets in the Xcode project
      */
-    XCSwiftPackageProductDependency: XcodeObjectArchive<XCSwiftPackageProductDependency | XCReferencedSwiftPackageProductDependency>;
+    XCSwiftPackageProductDependency: XcodeObjectArchive<XCSwiftPackageProductDependency>;
 }
 
 /**

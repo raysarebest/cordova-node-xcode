@@ -2,9 +2,9 @@ import type { XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedVal
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
 
 /**
- * Information about an Xcode project and how it's compiled into binary content
+ * Information about an Xcode project and how it's compiled into binary content, without certain legacy properties
  */
- export interface PBXProjectInternal extends XcodeProjectObject {
+ export interface PBXBaseProject extends XcodeProjectObject {
     /**
      * The name of the type this object represents. Note that this type is internal to the Xcode project, and doesn't correspond to a JavaScript or TypeScript type
      */
@@ -155,7 +155,7 @@ export interface PBXProjectReference {
 /**
  * Information about an Xcode project and how it's compiled into binary content, using a single root directory for its contents
  */
-export interface PBXSingleRootProject extends PBXProjectInternal {
+export interface PBXSingleRootProject extends PBXBaseProject {
     /**
      * Seemingly unused by modern Xcode, but used for source control features of very old versions. Otherwise equivalent to `projectDirPath`, which you probably wanna use instead in most contexts
      */
@@ -165,9 +165,14 @@ export interface PBXSingleRootProject extends PBXProjectInternal {
 /**
  * Information about an Xcode project and how it's compiled into binary content, using multiple root directories for its contents
  */
-export interface PBXMultipleRootProject extends PBXProjectInternal {
+export interface PBXMultipleRootProject extends PBXBaseProject {
     /**
      * Seemingly unused by modern Xcode, but used for source control features of very old versions. Otherwise a multiple-path equivalent to `projectDirPath`, which you probably wanna use instead in most contexts
      */
     projectRoots: string[];
 }
+
+/**
+ * Information about an Xcode project and how it's compiled into binary content
+ */
+export type PBXProjectInternal = PBXSingleRootProject | PBXMultipleRootProject;
