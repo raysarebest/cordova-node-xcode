@@ -2,7 +2,7 @@ import type { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 
 /**
- * Basic information about a file that's either comipled or copied into a target in a build phase. If a file is operated upon more than once in the build pipeline (for example, if it's both compiled into the executable and copied into the asset library), it will have multiple, independent entries in this section
+ * Basic information about a file that's either comipled or copied into a target in a build phase
  */
 export interface PBXBaseBuildFile extends XcodeProjectObject {
     /**
@@ -36,7 +36,7 @@ export interface PBXBuildFileSettings {
 }
 
 /**
- * A file locally managed by this project for compilation or copying into a target by a build phase in this project. If a file is operated upon more than once in the build pipeline (for example, if it's both compiled into the executable and copied into the asset library), it will have multiple, independent entries in this section
+ * A file locally managed by this project for compilation or copying into a target by a build phase in this project
  */
 export interface PBXInternalBuildFile extends PBXBaseBuildFile {
     /**
@@ -50,7 +50,7 @@ export interface PBXInternalBuildFile extends PBXBaseBuildFile {
 }
 
 /**
- * A Swift Package Manager-based dependency that should be compiled into a target in this project. If a file is operated upon more than once in the build pipeline (for example, if it's both compiled into the executable and copied into the asset library), it will have multiple, independent entries in this section
+ * A Swift Package Manager-based dependency that should be compiled into a target in this project
  */
 export interface PBXSwiftPackageBuildFile extends PBXBaseBuildFile {
     /**
@@ -64,6 +64,6 @@ export interface PBXSwiftPackageBuildFile extends PBXBaseBuildFile {
 }
 
 /**
- * A file that's either comipled or copied into a target in a build phase. If a file is operated upon more than once in the build pipeline (for example, if it's both compiled into the executable and copied into the asset library), it will have multiple, independent entries in this section
+ * A file that's either comipled or copied into a target in a build phase
  */
 export type PBXBuildFile = PBXInternalBuildFile | PBXSwiftPackageBuildFile;

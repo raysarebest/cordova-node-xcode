@@ -2,6 +2,7 @@ import type { PBXProjectInternal } from "./pbxproject";
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 import type { XCConfigurationList } from "./xcconfigurationlist";
+import type { PBXBuildFile } from "./pbxbuildfile";
 
 /**
  * The root object of an Xcode project, containing metadata about the project, and a reference to the project's data
@@ -77,6 +78,14 @@ interface XcodeObjectArchiveList {
      */
     PBXProject: XcodeObjectArchive<PBXProjectInternal>;
     /**
+     * The list of objects included in the project file that enumerate the sets of settings used to build a target or project. Note that unless manually changed, a project and the primary target of the same name will both have an entry in this list by default
+     */
+    XCConfigurationList: XcodeObjectArchive<XCConfigurationList>;
+    /**
+     * The list of objects included in the project file that describe a file that's either compiled or copied into a target in a build phase. If a file is operated upon more than once in the build pipeline (for example, if it's both compiled into the executable and copied into the asset library), it will have multiple, independent entries in this section
+     */
+    PBXBuildFile: XcodeObjectArchive<PBXBuildFile>;
+    /**
      * The list of objects included in the project file that describe a remote (not local) Swift Package that should be included in the project by the Swift Package Manager. This won't be present if no project or target depends on any Swift packages via the Swift Package Manager
      */
     XCRemoteSwiftPackageReference?: XcodeObjectArchive<XCRemoteSwiftPackageReference>;
@@ -84,10 +93,6 @@ interface XcodeObjectArchiveList {
      * The list of objects included in the project file that describe modules produced by a remote (not local) Swift Package that should be compiled for use by other targets in the Xcode project. This won't be present if no project or target depends on any Swift packages via the Swift Package Manager
      */
     XCSwiftPackageProductDependency?: XcodeObjectArchive<XCSwiftPackageProductDependency>;
-    /**
-     * The list of objects included in the project file that enumerate the sets of settings used to build a target or project. Note that unless manually changed, a project and the primary target of the same name will both have an entry in this list by default
-     */
-    XCConfigurationList: XcodeObjectArchive<XCConfigurationList>;
 }
 
 /**
