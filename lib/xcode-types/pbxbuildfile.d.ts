@@ -1,5 +1,5 @@
-import { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
-import { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
+import type { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
+import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 
 /**
  * Basic information about a file that's either comipled or copied into a target in a build phase. If a file is operated upon more than once in the build pipeline (for example, if it's both compiled into the executable and copied into the asset library), it will have multiple, independent entries in this section
@@ -24,7 +24,7 @@ export interface PBXBuildFileSettings {
     /**
      * Xcode-defined preferences about how the file should be compiled or built. Note that different values are appropriate here based on the type of file
      */
-    ATTRIBUTES?: ("Public" | "Private" | "Weak" | "Required" | "CodeSignOnCopy" | "RemoveHeadersOnCopy" | string)[];
+    ATTRIBUTES?: (("Public" | "Private") | ("Weak" | "Required") | ("CodeSignOnCopy" | "RemoveHeadersOnCopy") | string)[];
     /**
      * File-specific flags to pass to the compiler when the file is built
      */

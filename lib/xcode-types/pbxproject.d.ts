@@ -1,5 +1,6 @@
 import type { XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedValue } from "./xcode";
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
+import type { XCConfigurationList } from "./xcconfigurationlist";
 
 /**
  * Information about an Xcode project and how it's compiled into binary content, without certain legacy properties

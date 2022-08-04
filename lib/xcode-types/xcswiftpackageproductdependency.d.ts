@@ -1,5 +1,5 @@
-import { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
-import { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
+import type { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
+import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
 
 /**
  * A Swift package product dependency that strictly names the product that the dependency produces

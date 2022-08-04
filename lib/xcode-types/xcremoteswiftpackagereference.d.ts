@@ -1,4 +1,4 @@
-import { XcodeProjectObject } from "./xcode";
+import type { XcodeProjectObject } from "./xcode";
 
 /**
  * A reference to a remote (not local) Swift Package Manager-based package for use in an Xcode project
