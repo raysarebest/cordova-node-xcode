@@ -1,8 +1,9 @@
 import type { PBXProjectInternal } from "./pbxproject";
+import type { PBXBuildFile } from "./pbxbuildfile";
+import type { PBXTargetDependency } from "./pbxtargetdependency";
+import type { XCConfigurationList } from "./xcconfigurationlist";
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
-import type { XCConfigurationList } from "./xcconfigurationlist";
-import type { PBXBuildFile } from "./pbxbuildfile";
 
 /**
  * The root object of an Xcode project, containing metadata about the project, and a reference to the project's data
@@ -78,13 +79,17 @@ interface XcodeObjectArchiveList {
      */
     PBXProject: XcodeObjectArchive<PBXProjectInternal>;
     /**
-     * The list of objects included in the project file that enumerate the sets of settings used to build a target or project. Note that unless manually changed, a project and the primary target of the same name will both have an entry in this list by default
-     */
-    XCConfigurationList: XcodeObjectArchive<XCConfigurationList>;
-    /**
      * The list of objects included in the project file that describe a file that's either compiled or copied into a target in a build phase. If a file is operated upon more than once in the build pipeline (for example, if it's both compiled into the executable and copied into the asset library), it will have multiple, independent entries in this section
      */
     PBXBuildFile: XcodeObjectArchive<PBXBuildFile>;
+    /**
+     * The list of object included in the project file that describe a target that's depended upon by another target to be built. If more than one target depends on a particular target, that target will have as many references in this section as the total number of targets that depend upon it
+     */
+    PBXTargetDependency: XcodeObjectArchive<PBXTargetDependency>;
+    /**
+     * The list of objects included in the project file that enumerate the sets of settings used to build a target or project. Note that unless manually changed, a project and the primary target of the same name will both have an entry in this list by default
+     */
+    XCConfigurationList: XcodeObjectArchive<XCConfigurationList>;
     /**
      * The list of objects included in the project file that describe a remote (not local) Swift Package that should be included in the project by the Swift Package Manager. This won't be present if no project or target depends on any Swift packages via the Swift Package Manager
      */
@@ -110,7 +115,7 @@ export interface XcodeProjectObject {
  * 
  * @template ValueType The type of data that is represented in the `value` property and described by the `comment`
  */
-export interface XcodeCommentedValue<ValueType> {
+export interface XcodeConcreteCommentedValue<ValueType> {
     /**
      * The data for the value
      */
@@ -120,3 +125,13 @@ export interface XcodeCommentedValue<ValueType> {
      */
     comment: string;
 }
+
+/**
+ * A value in an Xcode project file that may or may not have a corresponding comment describing its purpose
+ */
+export type XcodeCommentedValue<ValueType> = ValueType | XcodeConcreteCommentedValue<ValueType>;
+
+/**
+ * In projects that contain support for building one or more targets for Mac Catalyst, used to specify some objects that can be included only in the native and/or only in the Catalyst products
+ */
+export type XcodePlatformFilter = "ios" | "maccatalyst";

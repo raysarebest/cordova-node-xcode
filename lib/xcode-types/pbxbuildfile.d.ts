@@ -1,4 +1,4 @@
-import type { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
+import type { XcodeProjectObject, XcodeProjectObjectReference, XcodePlatformFilter } from "./xcode";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 
 /**
@@ -32,7 +32,7 @@ export interface PBXBuildFileSettings {
     /**
      * Present in the context of targets that can be compiled for Mac Catalyst, defines which platforms the file can be built for. If the target supports Mac Catalyst but this property is missing, the file can be built for all platforms
      */
-    platformFilter?: "ios" | "maccatalyst";
+    platformFilter?: XcodePlatformFilter;
 }
 
 /**
