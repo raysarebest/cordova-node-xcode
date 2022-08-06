@@ -1,4 +1,5 @@
 import type { XcodeProjectObject, XcodeProjectObjectReference, XcodePlatformFilter } from "./xcode";
+import type { PBXTarget } from "./pbxtarget";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 
 /**
@@ -24,7 +25,7 @@ export interface PBXBaseTargetDependency extends XcodeProjectObject {
  */
 export interface PBXInternalTargetDependency extends PBXBaseTargetDependency {
     /**
-     * A reference to the target that's depended upon. Concrete data can be accessed through one of the project's `PBXTarget`-based object archives, such as those for `PBXNativeTarget`, `PBXLegacyTarget`, or `PBXAggregateTarget`
+     * A reference to the target that's depended upon. Concrete data can be accessed through one of the project's {@link PBXTarget}-based object archives, such as those for {@link PBXNativeTarget}, {@link PBXLegacyTarget}, or {@link PBXAggregateTarget}
      */
     target: XcodeProjectObjectReference<PBXTarget>;
     /**

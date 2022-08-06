@@ -1,5 +1,6 @@
 import type { PBXProjectInternal } from "./pbxproject";
 import type { PBXBuildFile } from "./pbxbuildfile";
+import type { PBXNativeTarget, PBXAggregateTarget, PBXLegacyTarget } from "./pbxtarget";
 import type { PBXTargetDependency } from "./pbxtargetdependency";
 import type { XCConfigurationList } from "./xcconfigurationlist";
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
@@ -81,11 +82,23 @@ interface XcodeObjectArchiveList {
     /**
      * The list of objects included in the project file that describe a file that's either compiled or copied into a target in a build phase. If a file is operated upon more than once in the build pipeline (for example, if it's both compiled into the executable and copied into the asset library), it will have multiple, independent entries in this section
      */
-    PBXBuildFile: XcodeObjectArchive<PBXBuildFile>;
+    PBXBuildFile?: XcodeObjectArchive<PBXBuildFile>;
     /**
-     * The list of object included in the project file that describe a target that's depended upon by another target to be built. If more than one target depends on a particular target, that target will have as many references in this section as the total number of targets that depend upon it
+     * The list of objects included in the project file that describe the steps and information needed to produce an executable and/or distributable output file from one or many input source files, which Xcode knows how to produce itself without necessarily any other external tooling
      */
-    PBXTargetDependency: XcodeObjectArchive<PBXTargetDependency>;
+    PBXNativeTarget?: XcodeObjectArchive<PBXNativeTarget>;
+    /**
+     * The list of objects included in the project file that describe the steps and information needed to produce an executable and/or distributable output file from one or many input source files, which consist of the pipelines and outputs of one or more other targets
+     */
+    PBXAggregateTarget?: XcodeObjectArchive<PBXAggregateTarget>;
+    /**
+     * The list of objects included in the project file that describe the steps and information needed to produce an executable and/or distributable output file from one or many input source files, which Xcode relies on external tooling to execute and produce
+     */
+    PBXLegacyTarget?: XcodeObjectArchive<PBXLegacyTarget>;
+    /**
+     * The list of objects included in the project file that describe a target that's depended upon by another target to be built. If more than one target depends on a particular target, that target will have as many references in this section as the total number of targets that depend upon it
+     */
+    PBXTargetDependency?: XcodeObjectArchive<PBXTargetDependency>;
     /**
      * The list of objects included in the project file that enumerate the sets of settings used to build a target or project. Note that unless manually changed, a project and the primary target of the same name will both have an entry in this list by default
      */

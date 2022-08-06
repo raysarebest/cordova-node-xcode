@@ -1,4 +1,5 @@
 import type { XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedValue } from "./xcode";
+import type { PBXTarget } from "./pbxtarget";
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
 import type { XCConfigurationList } from "./xcconfigurationlist";
 
@@ -21,7 +22,7 @@ import type { XCConfigurationList } from "./xcconfigurationlist";
     /**
      * Human-readable text defining the minimum version of Xcode that the project supports
      */
-     compatibilityVersion: string;
+    compatibilityVersion: string;
     /**
      * The locale that the project was developed in. This is usually an ISO 639-1 locale idenifier in modern projects, though it may also be a plain English name of a language in older projects
      */
@@ -51,9 +52,9 @@ import type { XCConfigurationList } from "./xcconfigurationlist";
      */
     projectDirPath: string;
     /**
-     * The identifiers of the targets produced by this project. Concrete data for each target can be accessed through the project's `PBXNativeTarget` object archive
+     * The identifiers of the targets produced by this project. Concrete data for each target can be accessed through the project's object archive corresponding to the target's `isa` property (either {@link PBXNativeTarget}, {@link PBXAggregateTarget}, or {@link PBXLegacyTarget})
      */
-    targets: XcodeCommentedValue<XcodeProjectObjectReference<PBXNativeTarget>>[];
+    targets: XcodeCommentedValue<XcodeProjectObjectReference<PBXTarget>>[];
     /**
      * The identifiers of remote Swift packages this project uses, managed by the Swift Package Manager. Concrete data for each target can be accessed through the project's `XCRemoteSwiftPackageReference` object archive
      */
