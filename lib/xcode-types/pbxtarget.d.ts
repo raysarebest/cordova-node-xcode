@@ -6,7 +6,7 @@ import type { PBXTargetDependency } from "./pbxtargetdependency";
 /**
  * Basic information that describes a build pipeline and its output
  */
-export interface PBXBaseTarget extends XcodeProjectObject {
+export declare interface PBXBaseTarget extends XcodeProjectObject {
     /**
      * A reference to the group of distinct sets of settings that can be used to compile the target. Concrete data can be accessed through the project's `XCConfigurationList` object archive
      */
@@ -36,7 +36,7 @@ export interface PBXBaseTarget extends XcodeProjectObject {
 /**
  * A build pipeline and output that Xcode natively understands how to execute and produce without external tooling
  */
-export interface PBXNativeTarget extends PBXBaseTarget {
+export declare interface PBXNativeTarget extends PBXBaseTarget {
     /**
      * The name of the type this object represents
      */
@@ -70,12 +70,12 @@ export interface PBXNativeTarget extends PBXBaseTarget {
 /**
  * A type of product that Xcode can produce
  */
-export type XcodeProductType = '""' | '"com.apple.product-type.application"' | '"com.apple.product-type.framework"' | '"com.apple.product-type.framework.static"' | '"com.apple.product-type.xcframework"' | '"com.apple.product-type.library.dynamic"' | '"com.apple.product-type.library.static"' | '"com.apple.product-type.bundle"' | '"com.apple.product-type.bundle.unit-test"' | '"com.apple.product-type.bundle.ui-testing"' | '"com.apple.product-type.app-extension"' | '"com.apple.product-type.tool"' | '"com.apple.product-type.application.watchapp"' | '"com.apple.product-type.application.watchapp2"' | '"com.apple.product-type.application.watchapp2-container"' | '"com.apple.product-type.watchkit-extension"' | '"com.apple.product-type.watchkit2-extension"' | '"com.apple.product-type.tv-app-extension"' | '"com.apple.product-type.application.messages"' | '"com.apple.product-type.app-extension.messages"' | '"com.apple.product-type.app-extension.messages-sticker-pack"' | '"com.apple.product-type.xpc-service"' | '"com.apple.product-type.bundle.ocunit-test"' | '"com.apple.product-type.xcode-extension"' | '"com.apple.product-type.instruments-package"' | '"com.apple.product-type.app-extension.intents-service"' | '"com.apple.product-type.application.on-demand-install-capable"' | '"com.apple.product-type.metal-library"';
+export declare type XcodeProductType = '""' | '"com.apple.product-type.application"' | '"com.apple.product-type.framework"' | '"com.apple.product-type.framework.static"' | '"com.apple.product-type.xcframework"' | '"com.apple.product-type.library.dynamic"' | '"com.apple.product-type.library.static"' | '"com.apple.product-type.bundle"' | '"com.apple.product-type.bundle.unit-test"' | '"com.apple.product-type.bundle.ui-testing"' | '"com.apple.product-type.app-extension"' | '"com.apple.product-type.tool"' | '"com.apple.product-type.application.watchapp"' | '"com.apple.product-type.application.watchapp2"' | '"com.apple.product-type.application.watchapp2-container"' | '"com.apple.product-type.watchkit-extension"' | '"com.apple.product-type.watchkit2-extension"' | '"com.apple.product-type.tv-app-extension"' | '"com.apple.product-type.application.messages"' | '"com.apple.product-type.app-extension.messages"' | '"com.apple.product-type.app-extension.messages-sticker-pack"' | '"com.apple.product-type.xpc-service"' | '"com.apple.product-type.bundle.ocunit-test"' | '"com.apple.product-type.xcode-extension"' | '"com.apple.product-type.instruments-package"' | '"com.apple.product-type.app-extension.intents-service"' | '"com.apple.product-type.application.on-demand-install-capable"' | '"com.apple.product-type.metal-library"';
 
 /**
  * A build pipeline and output that consists of the pipelines and outputs of one or more other targets
  */
-export interface PBXAggregateTarget extends PBXBaseTarget {
+export declare interface PBXAggregateTarget extends PBXBaseTarget {
     /**
      * The name of the type this object represents
      */
@@ -85,7 +85,7 @@ export interface PBXAggregateTarget extends PBXBaseTarget {
 /**
  * A build pipeline and output that Xcode relies on external tooling to execute and produce
  */
-export interface PBXLegacyTarget extends PBXBaseTarget {
+export declare interface PBXLegacyTarget extends PBXBaseTarget {
     /**
      * The name of the type this object represents
      */
@@ -111,4 +111,4 @@ export interface PBXLegacyTarget extends PBXBaseTarget {
 /**
  * Instructions and information needed to transform input source files into output files ready for execution and/or distribution
  */
-export type PBXTarget = PBXNativeTarget | PBXAggregateTarget | PBXLegacyTarget;
+export declare type PBXTarget = PBXNativeTarget | PBXAggregateTarget | PBXLegacyTarget;

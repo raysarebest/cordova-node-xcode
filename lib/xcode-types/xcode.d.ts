@@ -60,14 +60,14 @@ type XcodeProjectObjectComment = `${string}_comment`;
  * 
  * @template ObjectType The type of object the reference points to
  */
- export type XcodeProjectObjectReference<ObjectType extends XcodeProjectObject> = string;
+ export declare type XcodeProjectObjectReference<ObjectType extends XcodeProjectObject> = string;
 
 /**
  * A list of all objects of a particular Xcode project object type, keyed by identifier
  * 
  * @template ObjectType The type of Xcode project object that is contained within this list
  */
-export interface XcodeObjectArchive<ObjectType extends XcodeProjectObject> {
+export declare interface XcodeObjectArchive<ObjectType extends XcodeProjectObject> {
     [key: XcodeProjectObjectReference<ObjectType> | XcodeProjectObjectComment]: (typeof key extends XcodeProjectObjectComment ? string : ObjectType) | undefined;
 }
 
@@ -116,7 +116,7 @@ interface XcodeObjectArchiveList {
 /**
  * A group of related information about an object in an Xcode project
  */
-export interface XcodeProjectObject {
+export declare interface XcodeProjectObject {
     /**
      * The name of the type this object represents
      */
@@ -128,7 +128,7 @@ export interface XcodeProjectObject {
  * 
  * @template ValueType The type of data that is represented in the `value` property and described by the `comment`
  */
-export interface XcodeConcreteCommentedValue<ValueType> {
+export declare interface XcodeConcreteCommentedValue<ValueType> {
     /**
      * The data for the value
      */
@@ -142,9 +142,9 @@ export interface XcodeConcreteCommentedValue<ValueType> {
 /**
  * A value in an Xcode project file that may or may not have a corresponding comment describing its purpose
  */
-export type XcodeCommentedValue<ValueType> = ValueType | XcodeConcreteCommentedValue<ValueType>;
+export declare type XcodeCommentedValue<ValueType> = ValueType | XcodeConcreteCommentedValue<ValueType>;
 
 /**
  * In projects that contain support for building one or more targets for Mac Catalyst, used to specify some objects that can be included only in the native and/or only in the Catalyst products
  */
-export type XcodePlatformFilter = "ios" | "maccatalyst";
+export declare type XcodePlatformFilter = "ios" | "maccatalyst";

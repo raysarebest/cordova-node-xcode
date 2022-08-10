@@ -6,7 +6,7 @@ import type { XCConfigurationList } from "./xcconfigurationlist";
 /**
  * Information about an Xcode project and how it's compiled into binary content, without certain legacy properties
  */
- export interface PBXBaseProject extends XcodeProjectObject {
+ export declare interface PBXBaseProject extends XcodeProjectObject {
     /**
      * The name of the type this object represents. Note that this type is internal to the Xcode project, and doesn't correspond to a JavaScript or TypeScript type
      */
@@ -72,7 +72,7 @@ import type { XCConfigurationList } from "./xcconfigurationlist";
 /**
  * A list of project-specific properties about an Xcode project
  */
-export interface PBXProjectAttributeList {
+export declare interface PBXProjectAttributeList {
     [key: string]: unknown;
 
     /**
@@ -104,14 +104,14 @@ export interface PBXProjectAttributeList {
 /**
  * A map of identifiers for {@link PBXTarget} objects to attributes that configure them in the context of an Xcode project
  */
-export interface XcodeTargetAttributeArchive {
+export declare interface XcodeTargetAttributeArchive {
     [key: XcodeProjectObjectReference<PBXTarget>]: XcodeTargetAttributeConfiguration | undefined;
 }
 
 /**
  * A group of configuration properties for a specific {@link PBXTarget} in the context of an Xcode project
  */
-export interface XcodeTargetAttributeConfiguration {
+export declare interface XcodeTargetAttributeConfiguration {
     [key: string]: unknown;
 
     /**
@@ -135,7 +135,7 @@ export interface XcodeTargetAttributeConfiguration {
 /**
  * A reference to a sub-project of a {@link PBXProject}
  */
-export interface PBXProjectReference {
+export declare interface PBXProjectReference {
     /**
      * The identifier of the group where the sub-project's compiled outputs can be found. Concrete data can be accessed through the parent project's `PBXGroup` object archive
      */
@@ -157,7 +157,7 @@ export interface PBXProjectReference {
 /**
  * Information about an Xcode project and how it's compiled into binary content, using a single root directory for its contents
  */
-export interface PBXSingleRootProject extends PBXBaseProject {
+export declare interface PBXSingleRootProject extends PBXBaseProject {
     /**
      * Seemingly unused by modern Xcode, but used for source control features of very old versions. Otherwise equivalent to `projectDirPath`, which you probably wanna use instead in most contexts
      */
@@ -167,7 +167,7 @@ export interface PBXSingleRootProject extends PBXBaseProject {
 /**
  * Information about an Xcode project and how it's compiled into binary content, using multiple root directories for its contents
  */
-export interface PBXMultipleRootProject extends PBXBaseProject {
+export declare interface PBXMultipleRootProject extends PBXBaseProject {
     /**
      * Seemingly unused by modern Xcode, but used for source control features of very old versions. Otherwise a multiple-path equivalent to `projectDirPath`, which you probably wanna use instead in most contexts
      */
@@ -177,4 +177,4 @@ export interface PBXMultipleRootProject extends PBXBaseProject {
 /**
  * Information about an Xcode project and how it's compiled into binary content
  */
-export type PBXProjectInternal = PBXSingleRootProject | PBXMultipleRootProject;
+export declare type PBXProjectInternal = PBXSingleRootProject | PBXMultipleRootProject;

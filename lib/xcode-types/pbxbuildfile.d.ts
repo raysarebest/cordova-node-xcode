@@ -4,7 +4,7 @@ import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdep
 /**
  * Basic information about a file that's either comipled or copied into a target in a build phase
  */
-export interface PBXBaseBuildFile extends XcodeProjectObject {
+export declare interface PBXBaseBuildFile extends XcodeProjectObject {
     /**
      * The name of the type this object represents
      */
@@ -18,7 +18,7 @@ export interface PBXBaseBuildFile extends XcodeProjectObject {
 /**
  * Information that describes how a file should treated while being built by a build phase
  */
-export interface PBXBuildFileSettings {
+export declare interface PBXBuildFileSettings {
     [key: string]: unknown;
 
     /**
@@ -38,7 +38,7 @@ export interface PBXBuildFileSettings {
 /**
  * A file locally managed by this project for compilation or copying into a target by a build phase in this project
  */
-export interface PBXInternalBuildFile extends PBXBaseBuildFile {
+export declare interface PBXInternalBuildFile extends PBXBaseBuildFile {
     /**
      * A reference to the internal metadata for this file. Concrete data can be accessed through the project's `PBXFileReference` object archive
      */
@@ -52,7 +52,7 @@ export interface PBXInternalBuildFile extends PBXBaseBuildFile {
 /**
  * A Swift Package Manager-based dependency that should be compiled into a target in this project
  */
-export interface PBXSwiftPackageBuildFile extends PBXBaseBuildFile {
+export declare interface PBXSwiftPackageBuildFile extends PBXBaseBuildFile {
     /**
      * A reference to the internal metadata for this package. Concrete data can be accessed through the project's `XCSwiftPackageProductDependency` object archive
      */
@@ -66,4 +66,4 @@ export interface PBXSwiftPackageBuildFile extends PBXBaseBuildFile {
 /**
  * A file that's either comipled or copied into a target in a build phase
  */
-export type PBXBuildFile = PBXInternalBuildFile | PBXSwiftPackageBuildFile;
+export declare type PBXBuildFile = PBXInternalBuildFile | PBXSwiftPackageBuildFile;

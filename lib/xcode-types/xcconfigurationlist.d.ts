@@ -3,7 +3,7 @@ import type { XcodeProjectObject, XcodeCommentedValue, XcodeProjectObjectReferen
 /**
  * A group of distinct sets of settings used to describe how a target or project should be compiled
  */
-export interface XCConfigurationList extends XcodeProjectObject {
+export declare interface XCConfigurationList extends XcodeProjectObject {
     /**
      * The name of the type this object represents
      */

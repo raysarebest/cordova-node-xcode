@@ -2,6 +2,7 @@
 	// Source files parsed by TypeScript
 	"include": [
 		"lib/**/*",
+		"utils/**/*",
 		"index.js"
 	],
 	"compilerOptions": {

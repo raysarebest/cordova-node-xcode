@@ -5,7 +5,7 @@ import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdep
 /**
  * Describes the core information of a target that another target depends on to be built, such as a framework, Swift package, or executable tested by a test target, whether or not that target exists in the same project as the target that depends upon it. You probably want to use a subtype of this, like {@link PBXInternalTargetDependency} or {@link PBXExternalSwiftPackageTargetDependency}
  */
-export interface PBXBaseTargetDependency extends XcodeProjectObject {
+export declare interface PBXBaseTargetDependency extends XcodeProjectObject {
     /**
      * The name of the type this object represents
      */
@@ -23,7 +23,7 @@ export interface PBXBaseTargetDependency extends XcodeProjectObject {
 /**
  * Describes a target dependency that's included and used locally in the project, as opposed to a dependency integrated by the Swift Package Manager in a multi-project configuration
  */
-export interface PBXInternalTargetDependency extends PBXBaseTargetDependency {
+export declare interface PBXInternalTargetDependency extends PBXBaseTargetDependency {
     /**
      * A reference to the target that's depended upon. Concrete data can be accessed through one of the project's {@link PBXTarget}-based object archives, such as those for {@link PBXNativeTarget}, {@link PBXLegacyTarget}, or {@link PBXAggregateTarget}
      */
@@ -45,7 +45,7 @@ export interface PBXInternalTargetDependency extends PBXBaseTargetDependency {
 /**
  * Describes a target dependency that's managed by the Swift Package Manager in some cases where a project has at least one or more sub- or sibling-projects
  */
-export interface PBXExternalSwiftPackageTargetDependency extends PBXBaseTargetDependency {
+export declare interface PBXExternalSwiftPackageTargetDependency extends PBXBaseTargetDependency {
     /**
      * A reference to the Swift package product that's being depended upon. Concrete data can be accessed through the project's `XCSwiftPackageProductDependency` object archive
      */
@@ -55,4 +55,4 @@ export interface PBXExternalSwiftPackageTargetDependency extends PBXBaseTargetDe
 /**
  * Describes a target that another target depends on to be built, such as a framework, Swift package, or executable tested by a test target, whether or not that target exists in the same project as the target that depends upon it
  */
-export type PBXTargetDependency = PBXInternalTargetDependency | PBXExternalSwiftPackageTargetDependency;
+export declare type PBXTargetDependency = PBXInternalTargetDependency | PBXExternalSwiftPackageTargetDependency;
