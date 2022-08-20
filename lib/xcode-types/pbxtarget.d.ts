@@ -2,6 +2,7 @@ import type { XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedVal
 import type { XCConfigurationList } from "./xcconfigurationlist";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 import type { PBXTargetDependency } from "./pbxtargetdependency";
+import type { PBXBuildPhase } from "./pbxbuildphase";
 
 /**
  * Basic information that describes a build pipeline and its output

@@ -1,4 +1,5 @@
 import type { XcodeProjectObject, XcodeCommentedValue, XcodeProjectObjectReference } from "./xcode";
+import type { XCBuildConfiguration } from "./xcbuildconfiguration";
 
 /**
  * A group of distinct sets of settings used to describe how a target or project should be compiled
