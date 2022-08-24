@@ -3,6 +3,7 @@ import type { XCConfigurationList } from "./xcconfigurationlist";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 import type { PBXTargetDependency } from "./pbxtargetdependency";
 import type { PBXBuildPhase } from "./pbxbuildphase";
+import type { PBXBuildRule } from "./pbxbuildrule";
 
 /**
  * Basic information that describes a build pipeline and its output
