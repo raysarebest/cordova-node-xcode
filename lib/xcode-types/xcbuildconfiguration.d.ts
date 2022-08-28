@@ -1,5 +1,6 @@
-import { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
-import { XcodeKnownBuildSettings } from "./knownbuildsettings";
+import type { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
+import type { XcodeKnownBuildSettings } from "./knownbuildsettings";
+import type { PBXFileReference } from "./xcfilesystemobject";
 
 /**
  * A group of specific settings that describe how to build a target

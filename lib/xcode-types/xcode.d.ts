@@ -9,7 +9,7 @@ import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdep
 /**
  * The root object of an Xcode project, containing metadata about the project, and a reference to the project's data
  */
-interface XcodeProjectDescriptor {
+export declare interface XcodeProjectDescriptor {
     /**
      * The Xcode project information
      */
@@ -23,7 +23,7 @@ interface XcodeProjectDescriptor {
 /**
  * Information contained in an Xcode project file
  */
-interface XcodeProject {
+export declare interface XcodeProject {
     /**
      * The format version that the project uses. This has been `1` for every version of Xcode to date (current latest is Xcode 16.0 beta 4)
      */
@@ -53,7 +53,7 @@ interface XcodeProject {
 /**
  * A comment that describes the purpose of the base key and value it corresponds to
  */
-type XcodeProjectObjectComment = `${string}_comment`;
+export declare type XcodeProjectObjectComment = `${string}_comment`;
 
 /**
  * A reference to an object in an Xcode project. This is a 96-bit identifier represented by a 24-character uppercase hexadecimal string, and must be unique across the entire project file

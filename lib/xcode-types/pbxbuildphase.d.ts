@@ -4,7 +4,7 @@ import type { PBXBuildFile } from "./pbxbuildfile";
 /**
  * Basic information that describes a step required to transform input source to compiled/packaged output
  */
-export interface PBXBaseBuildPhase extends XcodeProjectObject {
+export declare interface PBXBaseBuildPhase extends XcodeProjectObject {
     /**
      * A 32-bit integer describing a list of options as a bitmask. Exactly what each bit represents is unclear as Xcode generally defaults to 2147483647 (or 1111111111111111111111111111111 in binary, representing all options enabled), or 8 (1000 in binary) in some circumstances
      */
@@ -22,7 +22,7 @@ export interface PBXBaseBuildPhase extends XcodeProjectObject {
 /**
  * A step in a build pipeline that copies specific files to a specific destination directory in the installable bundle that's output by the pipeline
  */
-export interface PBXCopyFilesBuildPhase extends PBXBaseBuildPhase {
+export declare interface PBXCopyFilesBuildPhase extends PBXBaseBuildPhase {
     /**
      * The name of the type this object represents
      */
@@ -57,7 +57,7 @@ export interface PBXCopyFilesBuildPhase extends PBXBaseBuildPhase {
 /**
  * A step in a build pipeline that executes a shell script
  */
-export interface PBXShellScriptBuildPhase extends PBXBaseBuildPhase {
+export declare interface PBXShellScriptBuildPhase extends PBXBaseBuildPhase {
     /**
      * The name of the type this object represents
      */
@@ -107,7 +107,7 @@ export interface PBXShellScriptBuildPhase extends PBXBaseBuildPhase {
 /**
  * A step in a build pipeline that copies the public, private, and internal headers that the target uses into its compiled bundle
  */
-export interface PBXHeadersBuildPhase extends PBXBaseBuildPhase {
+export declare interface PBXHeadersBuildPhase extends PBXBaseBuildPhase {
     /**
      * The name of the type this object represents
      */
@@ -117,7 +117,7 @@ export interface PBXHeadersBuildPhase extends PBXBaseBuildPhase {
 /**
  * A step in a build pipeline that copies files that are not libraries or executables that the executables produced by the target depend upon to run into the compiled bundle
  */
-export interface PBXResourcesBuildPhase extends PBXBaseBuildPhase {
+export declare interface PBXResourcesBuildPhase extends PBXBaseBuildPhase {
     /**
      * The name of the type this object represents
      */
@@ -127,7 +127,7 @@ export interface PBXResourcesBuildPhase extends PBXBaseBuildPhase {
 /**
  * A step in a build pipeline that transforms source code into an executable binary
  */
-export interface PBXSourcesBuildPhase extends PBXBaseBuildPhase {
+export declare interface PBXSourcesBuildPhase extends PBXBaseBuildPhase {
     /**
      * The name of the type this object represents
      */
@@ -137,7 +137,7 @@ export interface PBXSourcesBuildPhase extends PBXBaseBuildPhase {
 /**
  * A step in a build pipeline that links an executable compiled earlier in the pipeline with any libraries that it uses
  */
-export interface PBXFrameworksBuildPhase extends PBXBaseBuildPhase {
+export declare interface PBXFrameworksBuildPhase extends PBXBaseBuildPhase {
     /**
      * The name of the type this object represents
      */
@@ -147,7 +147,7 @@ export interface PBXFrameworksBuildPhase extends PBXBaseBuildPhase {
 /**
  * A step in a build pipeline that compiles Carbon resource definition files for legacy Mac OS systems
  */
-export interface PBXRezBuildPhase extends PBXBaseBuildPhase {
+export declare interface PBXRezBuildPhase extends PBXBaseBuildPhase {
     /**
      * The name of the type this object represents
      */
@@ -157,4 +157,4 @@ export interface PBXRezBuildPhase extends PBXBaseBuildPhase {
 /**
  * A step in a build pipeline that transforms the source of a target into a compiled output bundle
  */
-export type PBXBuildPhase = PBXCopyFilesBuildPhase | PBXShellScriptBuildPhase | PBXHeadersBuildPhase | PBXResourcesBuildPhase | PBXSourcesBuildPhase | PBXFrameworksBuildPhase | PBXRezBuildPhase;
+export declare type PBXBuildPhase = PBXCopyFilesBuildPhase | PBXShellScriptBuildPhase | PBXHeadersBuildPhase | PBXResourcesBuildPhase | PBXSourcesBuildPhase | PBXFrameworksBuildPhase | PBXRezBuildPhase;

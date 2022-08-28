@@ -4,6 +4,7 @@ import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdep
 import type { PBXTargetDependency } from "./pbxtargetdependency";
 import type { PBXBuildPhase } from "./pbxbuildphase";
 import type { PBXBuildRule } from "./pbxbuildrule";
+import type { PBXFileReference } from "./xcfilesystemobject";
 
 /**
  * Basic information that describes a build pipeline and its output

@@ -3,7 +3,7 @@ import type { XcodeProjectObject } from "./xcode";
 /**
  * A method for transforming an input file that matches specific critera into one or more output files
  */
-export interface PBXBuildRule extends XcodeProjectObject {
+export declare interface PBXBuildRule extends XcodeProjectObject {
     /**
      * The name of the type this object represents
      */

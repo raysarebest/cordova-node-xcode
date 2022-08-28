@@ -2,6 +2,7 @@ import type { XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedVal
 import type { PBXTarget } from "./pbxtarget";
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
 import type { XCConfigurationList } from "./xcconfigurationlist";
+import type { PBXFileReference, PBXGroup } from "./xcfilesystemobject";
 
 /**
  * Information about an Xcode project and how it's compiled into binary content, without certain legacy properties
@@ -95,6 +96,10 @@ export declare interface PBXProjectAttributeList {
      * Indicates if targets produced by this project should be compiled in parallel to each other if they don't depend on each other
      */
     BuildIndependentTargetsInParallel?: (0 | 1) | ("YES" | "NO");
+    /**
+     * A comprehensive list of all on-demand resource tags known to be used by build files in this project
+     */
+    KnownAssetTags?: (string | number)[];
     /**
      * Attributes specific to targets within the project
      */

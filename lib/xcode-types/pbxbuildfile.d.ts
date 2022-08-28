@@ -1,5 +1,6 @@
 import type { XcodeProjectObject, XcodeProjectObjectReference, XcodePlatformFilter } from "./xcode";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
+import type { PBXFileReference } from "./xcfilesystemobject";
 
 /**
  * Basic information about a file that's either comipled or copied into a target in a build phase
@@ -26,9 +27,13 @@ export declare interface PBXBuildFileSettings {
      */
     ATTRIBUTES?: (("Public" | "Private") | ("Weak" | "Required") | ("CodeSignOnCopy" | "RemoveHeadersOnCopy") | string)[];
     /**
-     * File-specific flags to pass to the compiler when the file is built
+     * A space-separated list of file-specific flags to pass to the compiler when the file is built
      */
     COMPILER_FLAGS?: string | number;
+    /**
+     * The on-demand resource tags that describe the groups this resource file belongs to that define when it should be downloaded from Apple's servers onto the user's device
+     */
+    ASSET_TAGS?: (string | number)[];
     /**
      * Present in the context of targets that can be compiled for Mac Catalyst, defines which platforms the file can be built for. If the target supports Mac Catalyst but this property is missing, the file can be built for all platforms
      */
