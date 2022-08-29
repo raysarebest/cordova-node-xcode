@@ -1,10 +1,10 @@
-import type { XcodeCommentedValue, XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
+import type { XcodeCommentedValue, XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedObject } from "./xcode";
 import type { PBXBuildFile } from "./pbxbuildfile";
 
 /**
  * Basic information that describes a step required to transform input source to compiled/packaged output
  */
-export declare interface PBXBaseBuildPhase extends XcodeProjectObject {
+export declare interface PBXBaseBuildPhase extends XcodeProjectObject, XcodeCommentedObject {
     /**
      * A 32-bit integer describing a list of options as a bitmask. Exactly what each bit represents is unclear as Xcode generally defaults to 2147483647 (or 1111111111111111111111111111111 in binary, representing all options enabled), or 8 (1000 in binary) in some circumstances
      */

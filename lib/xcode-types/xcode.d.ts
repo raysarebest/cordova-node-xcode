@@ -148,3 +148,13 @@ export declare type XcodeCommentedValue<ValueType> = ValueType | XcodeConcreteCo
  * In projects that contain support for building one or more targets for Mac Catalyst, used to specify some objects that can be included only in the native and/or only in the Catalyst products
  */
 export declare type XcodePlatformFilter = "ios" | "maccatalyst";
+
+/**
+ * An object for which the user could add custom comments in ancient versions of Xcode
+ */
+export declare interface XcodeCommentedObject {
+    /**
+     * A comment that the user has added to describe the object. This was removed in Xcode 4, and is unused by modern Xcode
+     */
+    comments?: string;
+}

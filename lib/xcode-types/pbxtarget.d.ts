@@ -1,15 +1,15 @@
-import type { XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedValue } from "./xcode";
+import type { XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedValue, XcodeCommentedObject } from "./xcode";
 import type { XCConfigurationList } from "./xcconfigurationlist";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 import type { PBXTargetDependency } from "./pbxtargetdependency";
 import type { PBXBuildPhase } from "./pbxbuildphase";
 import type { PBXBuildRule } from "./pbxbuildrule";
-import type { PBXFileReference } from "./xcfilesystemobject";
+import type { PBXFileReference } from "./xcfiletreeobject";
 
 /**
  * Basic information that describes a build pipeline and its output
  */
-export declare interface PBXBaseTarget extends XcodeProjectObject {
+export declare interface PBXBaseTarget extends XcodeProjectObject, XcodeCommentedObject {
     /**
      * A reference to the group of distinct sets of settings that can be used to compile the target. Concrete data can be accessed through the project's `XCConfigurationList` object archive
      */

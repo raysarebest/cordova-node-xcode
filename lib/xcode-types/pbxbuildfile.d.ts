@@ -1,6 +1,6 @@
 import type { XcodeProjectObject, XcodeProjectObjectReference, XcodePlatformFilter } from "./xcode";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
-import type { PBXFileReference } from "./xcfilesystemobject";
+import type { PBXFileReference } from "./xcfiletreeobject";
 
 /**
  * Basic information about a file that's either comipled or copied into a target in a build phase

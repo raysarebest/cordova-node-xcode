@@ -1,9 +1,9 @@
-import type { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
+import type { XcodeCommentedObject, XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
 
 /**
  * Core information about an object that Xcode tracks that most likely (but not necessarily) has a backing representation by an object in the operating system's filesystem, such as a file or directory
  */
-export declare interface XcodeBaseFileTreeObject extends XcodeProjectObject {
+export declare interface XcodeBaseFileTreeObject extends XcodeProjectObject, XcodeCommentedObject {
     /**
      * A UNIX path to the backing representation of this object in the computer's filesystem, or where it would be if it existed. The base path this path is relative to is defined by the `sourceTree`
      */

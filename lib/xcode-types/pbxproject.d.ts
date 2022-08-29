@@ -2,7 +2,7 @@ import type { XcodeProjectObject, XcodeProjectObjectReference, XcodeCommentedVal
 import type { PBXTarget } from "./pbxtarget";
 import type { XCRemoteSwiftPackageReference } from "./xcremoteswiftpackagereference";
 import type { XCConfigurationList } from "./xcconfigurationlist";
-import type { PBXFileReference, PBXGroup } from "./xcfilesystemobject";
+import type { PBXFileReference, PBXGroup } from "./xcfiletreeobject";
 
 /**
  * Information about an Xcode project and how it's compiled into binary content, without certain legacy properties

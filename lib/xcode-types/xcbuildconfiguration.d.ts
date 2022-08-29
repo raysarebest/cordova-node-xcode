@@ -1,6 +1,6 @@
 import type { XcodeProjectObject, XcodeProjectObjectReference } from "./xcode";
 import type { XcodeKnownBuildSettings } from "./knownbuildsettings";
-import type { PBXFileReference } from "./xcfilesystemobject";
+import type { PBXFileReference } from "./xcfiletreeobject";
 
 /**
  * A group of specific settings that describe how to build a target

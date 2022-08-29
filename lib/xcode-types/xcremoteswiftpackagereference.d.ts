@@ -71,7 +71,7 @@ export declare interface SPMVersionRangeRequirement {
     /**
      * The newest semantic version of the package that should be considered. Note that SPM will never actually install this version. For example, if the `maximumVersion` is 6.0.0, the latest version in the 5.x.x series is the version that will actually be installed
      */
-     maximumVersion: SPMSemanticVersion;
+    maximumVersion: SPMSemanticVersion;
 }
 
 /**

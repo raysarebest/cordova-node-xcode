@@ -1,5 +1,6 @@
 import type { XcodeProjectObject, XcodeProjectObjectReference, XcodePlatformFilter } from "./xcode";
 import type { PBXTarget } from "./pbxtarget";
+import type { PBXContainerItemProxy } from "./pbxcontaineritemproxy";
 import type { XCSwiftPackageProductDependency } from "./xcswiftpackageproductdependency";
 
 /**
