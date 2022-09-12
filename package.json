@@ -27,7 +27,7 @@
     "test": "npm run cover",
     "test:unit": "nodeunit test/parser test",
     "cover": "nyc npm run test:unit",
-    "typescript": "npx tsc utils/*.ts; node utils/updateBuildSettingsTypes.js; npx tsc; cp lib/**/*.d.ts types/lib/",
+    "typescript": "npx tsc utils/*.ts; node utils/updateBuildSettingsTypes.js; npx tsc; rsync -a --prune-empty-dirs --include '*/' --include '*.d.ts' --exclude '*' lib/ types/lib/",
     "prepack": "npm run typescript"
   },
   "license": "Apache-2.0",

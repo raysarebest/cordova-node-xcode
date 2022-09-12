@@ -60,7 +60,7 @@ export declare type XcodeProjectObjectComment = `${string}_comment`;
  * 
  * @template ObjectType The type of object the reference points to
  */
- export declare type XcodeProjectObjectReference<ObjectType extends XcodeProjectObject> = string;
+export declare type XcodeProjectObjectReference<ObjectType extends XcodeProjectObject> = string;
 
 /**
  * A list of all objects of a particular Xcode project object type, keyed by identifier
@@ -74,7 +74,7 @@ export declare interface XcodeObjectArchive<ObjectType extends XcodeProjectObjec
 /**
  * A comprehensive list of all objects in an Xcode project file, keyed by object type
  */
-interface XcodeObjectArchiveList {
+export declare interface XcodeObjectArchiveList {
     /**
      * The list of objects included in the project file that describe how to emit distinct binary outputs
      */

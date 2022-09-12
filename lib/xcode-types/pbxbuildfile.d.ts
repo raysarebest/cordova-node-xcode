@@ -25,7 +25,7 @@ export declare interface PBXBuildFileSettings {
     /**
      * Xcode-defined preferences about how the file should be compiled or built. Note that different values are appropriate here based on the type of file
      */
-    ATTRIBUTES?: (("Public" | "Private") | ("Weak" | "Required") | ("CodeSignOnCopy" | "RemoveHeadersOnCopy") | string)[];
+    ATTRIBUTES?: XcodeBuildFileSettingAttributes;
     /**
      * A space-separated list of file-specific flags to pass to the compiler when the file is built
      */
@@ -39,6 +39,11 @@ export declare interface PBXBuildFileSettings {
      */
     platformFilter?: XcodePlatformFilter;
 }
+
+/**
+ * Possible values for Xcode-defined preferences about how the file should be compiled or built. Note that different values are appropriate here based on the type of file
+ */
+export declare type XcodeBuildFileSettingAttributes = (("Public" | "Private") | ("Weak" | "Required") | ("CodeSignOnCopy" | "RemoveHeadersOnCopy") | string)[];
 
 /**
  * A file locally managed by this project for compilation or copying into a target by a build phase in this project
