@@ -15,4 +15,12 @@
  under the License.
  */
 
+/**
+ * Parser utility for xcodeproj project files, allowing you to edit xcodeproject files and write them back out
+ * @module cordova-node-xcode
+ */
+
+/**
+ * @borrows pbxProject as project
+ */
 exports.project = require('./lib/pbxProject')

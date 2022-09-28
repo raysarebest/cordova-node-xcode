@@ -190,7 +190,7 @@ function declarationsForSettings(settings: BuildSettingsList, typeModuleName?: s
 }
 
 function valuesForEnumeration(key:string, enumInfo: BuildSettingEnumerationInfo, settings: BuildSettingsList): EnumerationValues {
-    function fail() {
+    function fail(): never {
         throw new Error("Couldn't generate enumeration values for the key " + key);
     }
 
@@ -212,7 +212,7 @@ function valuesForEnumeration(key:string, enumInfo: BuildSettingEnumerationInfo,
             // test in the condition advanced the lastIndex, so we need to reset it
             inheritedValueExpression.lastIndex = 0;
 
-            let currentMatches: string[];
+            let currentMatches: string[] | null;
             while ((currentMatches = inheritedValueExpression.exec(enumInfo.default_value)) !== null) {
                 matchedKeys.push(currentMatches[currentMatches.length - 1]);
             }
@@ -230,10 +230,10 @@ function valuesForEnumeration(key:string, enumInfo: BuildSettingEnumerationInfo,
             return Object.keys(enumInfo.command_line_arguments);
         }
         else {
-            fail();
+            return fail();
         }
     }
     else {
-        fail();
+        return fail();
     }
 }

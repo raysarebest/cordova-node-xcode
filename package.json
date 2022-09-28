@@ -14,20 +14,21 @@
     "uuid": "^7.0.3"
   },
   "devDependencies": {
+    "@tsconfig/node10": "^1.0.9",
     "@types/node": "^18.0.6",
     "@types/pegjs": "^0.10.3",
     "jsdoc": "^3.6.10",
     "nodeunit": "^0.11.3",
     "nyc": "^15.0.0",
-    "pegjs": "^0.10.0",
+    "pegjs": "dev",
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "pegjs": "node_modules/.bin/pegjs lib/parser/pbxproj.pegjs",
+    "pegjs": "node_modules/.bin/pegjs --extra-options '{\"input\": \"lib/parser/pbxproj.pegjs\", \"output\": \"lib/parser/pbxproj.js\", \"header\": \"// @ts-nocheck\"}'",
     "test": "npm run cover",
     "test:unit": "nodeunit test/parser test",
     "cover": "nyc npm run test:unit",
-    "typescript": "npx tsc utils/*.ts; node utils/updateBuildSettingsTypes.js; npx tsc; rsync -a --prune-empty-dirs --include '*/' --include '*.d.ts' --exclude '*' lib/ types/lib/",
+    "typescript": "npx tsc utils/*.ts; node utils/updateBuildSettingsTypes.js; npx tsc -p jsconfig.json; rsync -a --prune-empty-dirs --include '*/' --include '*.d.ts' --exclude '*' lib/ types/lib/",
     "prepack": "npm run typescript"
   },
   "license": "Apache-2.0",
